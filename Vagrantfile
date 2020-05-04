@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
     config.vm.define boxname do |box|
       # Set VM base box and hostname
       box.vm.box = boxconfig[:box_name]
-      box.vm.box_version = "1.0"
+      box.vm.box_version = "1.1"
       box.vm.host_name = boxname.to_s
       # Additional network config if present
       if boxconfig.key?(:net)
