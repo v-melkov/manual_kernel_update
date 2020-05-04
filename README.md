@@ -18,7 +18,7 @@ stage-1
     make olddefconfig
     make all -j 8 && make modules_install && make install
 
-### Удалим старое ядро из системы
+### Удалим старое ядро из системы 
     rm -f /boot/*3.10*
 
 ### Обновим загрузчик
