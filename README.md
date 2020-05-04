@@ -18,7 +18,7 @@ stage-1
     make olddefconfig
     make all -j 8 && make modules_install && make install
 
-### Удалим старое ядро из системы 
+### Удалим старое ядро из системы
     rm -f /boot/*3.10*
 
 ### Обновим загрузчик
@@ -57,6 +57,9 @@ stage-2
     rm  -f ~/.bash_history
     history -c
     rm -rf /run/log/journal/*
+
+### Clean src folders
+    rm -rf /usr/src/linux-5.6.8
 
 ### Fill zeros all empty space
     dd if=/dev/zero of=/EMPTY bs=1M

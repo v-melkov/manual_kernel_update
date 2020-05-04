@@ -26,6 +26,9 @@ rm  -f ~/.bash_history
 history -c
 rm -rf /run/log/journal/*
 
+# Clean src folders
+rm -rf /usr/src/linux-5.6.8
+
 # Fill zeros all empty space
 dd if=/dev/zero of=/EMPTY bs=1M
 rm -f /EMPTY
