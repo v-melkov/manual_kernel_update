@@ -1,4 +1,15 @@
-stage-1
+В файле centos.json для нормальной сборки ядра внутри пакера изменяем следующие значения:
+
+    "disk_size": "40240"
+    "vboxmanage": [
+        [  "modifyvm",  "{{.Name}}",  "--memory",  "8192" ],
+        [  "modifyvm",  "{{.Name}}",  "--cpus",  "8" ]
+      ],
+
+
+Меняем скрипты:
+
+stage-1-kernel-update.sh
 -----
 
 ### Обновляем систему
@@ -28,8 +39,10 @@ stage-1
 ### Перезагрузка
     shutdown -r now
 
+------
 
-stage-2
+
+stage-2-clean.sh
 -----
 ### Устанавливаем последние VBoxGuestAdditions
     version=`curl --silent https://download.virtualbox.org/virtualbox/LATEST.TXT`
@@ -58,7 +71,7 @@ stage-2
     history -c
     rm -rf /run/log/journal/*
 
-### Clean src folders
+### Для уменьшения образа удалим исходники
     rm -rf /usr/src/linux-5.6.8
 
 ### Fill zeros all empty space
