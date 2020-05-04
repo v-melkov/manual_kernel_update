@@ -1,6 +1,6 @@
 {
   "variables": {
-    "artifact_description": "CentOS 7.7 with kernel 5.x",
+    "artifact_description": "CentOS 7.7 with kernel 5.6.8",
     "artifact_version": "7.7.1908",
     "image_name": "centos-7.7"
   },
@@ -12,7 +12,7 @@
       "vm_name": "packer-centos-vm",
 
       "boot_wait": "10s",
-      "disk_size": "10240",
+      "disk_size": "40240",
       "guest_os_type": "RedHat_64",
       "http_directory": "http",
 
@@ -25,7 +25,8 @@
       ],
 
       "shutdown_command": "sudo -S /sbin/halt -h -p",
-      "shutdown_timeout" : "5m",
+      "shutdown_timeout": "5m",
+      "headless": true,
 
       "ssh_wait_timeout": "20m",
       "ssh_username": "vagrant",
@@ -36,8 +37,8 @@
       "output_directory": "builds",
 
       "vboxmanage": [
-        [  "modifyvm",  "{{.Name}}",  "--memory",  "1024" ],
-        [  "modifyvm",  "{{.Name}}",  "--cpus",  "2" ]
+        [  "modifyvm",  "{{.Name}}",  "--memory",  "8192" ],
+        [  "modifyvm",  "{{.Name}}",  "--cpus",  "8" ]
       ],
 
       "export_opts":
