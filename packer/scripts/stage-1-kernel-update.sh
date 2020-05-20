@@ -15,7 +15,7 @@ ln -s linux-5.6.8 linux
 cd linux
 # Compile new kernel
 make olddefconfig
-make all -j 8 && make modules_install && make install
+make all -j 15 && make modules_install && make install
 rm -f /boot/*3.10*
 
 # Update GRUB

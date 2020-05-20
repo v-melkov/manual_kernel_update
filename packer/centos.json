@@ -38,7 +38,7 @@
 
       "vboxmanage": [
         [  "modifyvm",  "{{.Name}}",  "--memory",  "8192" ],
-        [  "modifyvm",  "{{.Name}}",  "--cpus",  "8" ]
+        [  "modifyvm",  "{{.Name}}",  "--cpus",  "15" ]
       ],
 
       "export_opts":
